@@ -7,13 +7,32 @@
 //
 
 #import "AppDelegate.h"
-
+#import "AFNetworkReachabilityManager.h"
 @interface AppDelegate ()
 
 @end
 
 @implementation AppDelegate
 
+#pragma mark - 演练
+#pragma mark - 检测网络连接
+- (void)reach
+{
+    /**
+     AFNetworkReachabilityStatusUnknown          = -1,  // 未知
+     AFNetworkReachabilityStatusNotReachable     = 0,   // 无连接
+     AFNetworkReachabilityStatusReachableViaWWAN = 1,   // 3G 花钱
+     AFNetworkReachabilityStatusReachableViaWiFi = 2,   // 局域网络,不花钱
+     */
+    // 如果要检测网络状态的变化,必须用检测管理器的单例的startMonitoring
+    [[AFNetworkReachabilityManager sharedManager] startMonitoring];
+
+    // 检测网络连接的单例,网络变化时的回调方法
+    [[AFNetworkReachabilityManager sharedManager] setReachabilityStatusChangeBlock:^(AFNetworkReachabilityStatus status) {
+        //DDLogInfo(@"AFNetworkReachabilityStatus--%d",status);
+        
+    }];
+}
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
