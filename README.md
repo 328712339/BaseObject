@@ -24,6 +24,7 @@ if (![versionCache isEqualToString:version]) //如果本地缓存的版本号和
     //设置上下面这句话，将当前版本缓存到本地，下次对比一样，就不走启动视屏了。
     //为了让每次都可以看到启动视屏，这句话先注释掉
     //[[NSUserDefaults standardUserDefaults] setObject:version forKey:@"VersionCache"];
+    
 
 }else{
     //不是首次启动
