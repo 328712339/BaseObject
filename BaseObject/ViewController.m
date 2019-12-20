@@ -27,6 +27,7 @@
     setenv("XcodeColors", "YES", 0); // Enables XcodeColors (you obviously have to install it too)
     [[DDTTYLogger sharedInstance] setForegroundColor:[UIColor yellowColor] backgroundColor:nil forFlag:LOG_FLAG_INFO];// 可以修改你想要的颜色
    
+    
 //    DDLogError(@"错误信息"); // 红色
 //    DDLogWarn(@"警告"); // 橙色
 //    DDLogInfo(@"提示信息"); // 默认是黑色
